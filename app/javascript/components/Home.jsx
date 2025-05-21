@@ -2,7 +2,6 @@ import React, {useState} from "react";
 
 const Home = ({ user }) => {
   const [formData, setFormData] = useState(user);
-console.log(user)
   const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
@@ -31,6 +30,7 @@ console.log(user)
 
     if (response.ok) {
       setMessage("✅ Signed up successfully!");
+      window.location.href = "/candidates";
     } else {
       setMessage(`❌ ${data.errors?.join(', ') || "Something went wrong"}`);
     }

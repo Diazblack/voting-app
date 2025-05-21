@@ -3,9 +3,7 @@ class UsersController < ApplicationController
 
   def create
     existing_user = User.find_by(email: user_params["email"])
-    puts user_params
     if existing_user
-      # This should navigate to the votes index route
       session[:user_id] = existing_user.id
       render json: { message: "User Found", user: existing_user }, status: :ok
     else
@@ -19,8 +17,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update 
+    current_user.update(vote_id: user_params[:vote_id]) 
+  end
+
   private
   def user_params
-    params.require(:user).permit(:email, :password_digest, :zip_code)
+    params.require(:user).permit(:email, :password_digest, :zip_code, :vote_id)
   end
 end
