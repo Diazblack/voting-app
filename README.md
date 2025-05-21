@@ -40,6 +40,14 @@ bundle exec rails server
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser
 
+Enter your email, password (no validation is enforced), and zip code.
+
+When you click Submit, you’ll be redirected to [http://localhost:3000/candidates](http://localhost:3000/candidates).
+
+On the candidates page, you can add a new candidate by entering their name in the input form at the bottom.
+Once submitted, your vote will be recorded for that candidate.
+
+
 For asset live reloading, run:
 ```sh
 ./bin/shakapacker-dev-server
